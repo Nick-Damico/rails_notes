@@ -5,6 +5,9 @@ ruby '3.3.0'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
 
+# Added by host Fly.io using bin/rails generate dockerfile
+gem "dockerfile-rails", ">= 1.6", :group => :development
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
@@ -70,3 +73,4 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+
