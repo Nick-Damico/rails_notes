@@ -1,16 +1,12 @@
 <div>
   <h1 class="font-bold text-4xl">Rails Articles!</h1>
 
-  <ul>
+  <ul class='mb-4'>
     <% @articles.each do |article| %>
       <li>
-        <h2 class='font-semibold text-2xl'>
-          <%= article.title %>
-        </h2>
-        <p>
-          <%= article.body %>
-        </p>
+        <%= link_to article.title, article %>
       </li>
     <% end %>
   </ul>
+  <%= link_to 'New Article', new_article_path, class: 'bg-sky-500 px-4 py-2 text-white rounded' %>
 </div>
