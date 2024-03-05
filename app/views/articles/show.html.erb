@@ -1,13 +1,29 @@
-<div class="flex flex-col">
-  <h1 class='font-bold text-3xl'><%= @article.title %></h1>
+<div class="flex flex-col space-y-4">
+  <div class="flex flex-col">
+    <h1 class='font-bold text-3xl'><%= @article.title %></h1>
 
-  <p class='mb-4'><%= @article.body %></p>
+    <p class='mb-4'><%= @article.body %></p>
 
-  <ul class='flex space-x-2'>
-    <li><%= link_to 'Edit', edit_article_path(@article), class: 'bg-sky-500 px-4 py-2 text-white rounded' %></li>
-    <li><%= link_to 'Destroy', article_path(@article), class: 'bg-red-400 px-4 py-2 text-white rounded', data: {
-              turbo_method: :delete,
-              turbo_confirm: 'Are you sure?'
-            } %></li>
-  </ul>
+    <ul class='flex space-x-2'>
+      <li><%= link_to 'Edit', edit_article_path(@article), class: 'bg-sky-500 px-4 py-2 text-white rounded' %></li>
+      <li><%= link_to 'Destroy', article_path(@article), class: 'bg-red-400 px-4 py-2 text-white rounded', data: {
+                turbo_method: :delete,
+                turbo_confirm: 'Are you sure?'
+              } %></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div>
+    <h2 class='font-semibold text-xl'>Comments</h2>
+    <%= render @article.comments %>
+  </div>
+
+  <hr>
+
+  <div class="flex flex-col">
+    <h2 class='font-semibold text-xl'>Add a comment:</h2>
+    <%= render 'comments/form', article: @article %>
+  </div>
 </div>
