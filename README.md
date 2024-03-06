@@ -26,8 +26,8 @@ A simple web application built with Ruby on Rails to manage tasks and use the Po
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/task-pomodoro-app.git
-   cd task-pomodoro-app
+   git clone https://github.com/Nick-Damico/rails_notes.git
+   cd rails_notes
    ```
 
 2. Install dependencies:
