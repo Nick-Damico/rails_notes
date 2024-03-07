@@ -9,12 +9,17 @@ LABEL fly_launch_runtime="rails"
 # Rails app lives here
 WORKDIR /rails
 
+# Set build args --build-args
+ARG RAILS_MASTER_KEY
+
 # Set production environment
 ENV BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development:test" \
-    RAILS_ENV="production"
+    RAILS_ENV="production" \
+    RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
 
+RUN echo "RAILS_MASTER_KEY set: $RAILS_MASTER_KEY"
 # Update gems and bundler
 RUN gem update --system --no-document && \
     gem install -N bundler
