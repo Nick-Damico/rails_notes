@@ -18,6 +18,8 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= Rails.application.credentials.database.username %>
+  password: <%= Rails.application.credentials.database.password %>
 
 development:
   <<: *default
@@ -80,4 +82,3 @@ test:
 production:
   <<: *default
   database: rails_notes_production
-  username: rails_notes

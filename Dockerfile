@@ -16,10 +16,8 @@ ARG RAILS_MASTER_KEY
 ENV BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development:test" \
-    RAILS_ENV="production" \
-    RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
+    RAILS_ENV="production"
 
-RUN echo "RAILS_MASTER_KEY set: $RAILS_MASTER_KEY"
 # Update gems and bundler
 RUN gem update --system --no-document && \
     gem install -N bundler

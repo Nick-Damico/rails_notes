@@ -1,16 +1,16 @@
-# fly.toml app configuration file generated for rails-notes on 2024-03-05T12:38:32-05:00
+# fly.toml app configuration file generated for rails-notes on 2024-03-05T20:54:56-05:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = 'rails-notes'
-primary_region = 'iad'
+primary_region = 'atl'
 console_command = '/rails/bin/rails console'
 
 [build]
 
 [deploy]
-  release_command = "./bin/rails db:prepare"
+  release_command = './bin/rails db:prepare'
 
 [http_service]
   internal_port = 3000
